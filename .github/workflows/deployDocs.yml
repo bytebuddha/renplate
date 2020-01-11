@@ -29,7 +29,7 @@ jobs:
         run: |
           git config --local user.name "Deploy Action"
           git config --local user.email "dev@example.com"
-          git commit -m "auto build documentation for commit ${{ github.sha }}" -a ||
+          git commit -m "auto build documentation for commit ${{ github.sha }}" -a --force ||
           echo "FIXME: Ignoring the output of git commit and git push --force"
       - name: Build and Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
