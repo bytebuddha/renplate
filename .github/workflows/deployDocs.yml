@@ -25,10 +25,11 @@ jobs:
           rm -rf docs/design/**/*
           mdbook build design
           mdbook build guide
-      #    git config --local user.name "Deploy Action"
-      #    git config --local user.email "dev@example.com"
-      #    echo "FIXME: Ignoring the output of git commit and git push"
-      #    git commit -m "auto build documentation for commit ${{ github.sha }}" -a || true
+          git config --local user.name "Deploy Action"
+          git config --local user.email "dev@example.com"
+          echo "FIXME: Ignoring the output of git commit and git push"
+          git pull
+          git commit -m "auto build documentation for commit ${{ github.sha }}" -a || true
       - name: Build and Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
