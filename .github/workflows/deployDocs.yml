@@ -19,18 +19,16 @@ jobs:
         with:
           mdbook-version: 'latest'
 
-      - name: Removing old guide
-        run: rm -rf docs/guide/**/*
-      - name: Removing old design guide
-        run: rm -rf docs/design/**/*
-      - run: mdbook build design
-      - run: mdbook build guide
       - name: commit files
         run: |
+          rm -rf docs/guide/**/*
+          rm -rf docs/design/**/*
+          mdbook build design
+          mdbook build guide
           git config --local user.name "Deploy Action"
           git config --local user.email "dev@example.com"
-          git commit -m "auto build documentation for commit ${{ github.sha }}" -a --force ||
           echo "FIXME: Ignoring the output of git commit and git push --force"
+          git commit -m "auto build documentation for commit ${{ github.sha }}" -a --force || true
       - name: Build and Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
