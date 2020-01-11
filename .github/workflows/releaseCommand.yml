@@ -28,9 +28,9 @@ jobs:
             ls -lsa
             ls -lsa *-dists
             mkdir BuildArtifacts
-            cp renpyboilerplate-*-dists/renpyboilerplate-*-linux.tar.bz2 renpyboilerplate-linux.tar.bz2
-            cp renpyboilerplate-*-dists/renpyboilerplate-*-mac.zip renpyboilerplate-mac.zip
-            cp renpyboilerplate-*-dists/renpyboilerplate-*-pc.zip renpyboilerplate-pc.zip
+            cp renplate-*-dists/renplate-*-linux.tar.bz2 renplate-linux.tar.bz2
+            cp renplate-*-dists/renplate-*-mac.zip renplate-mac.zip
+            cp renplate-*-dists/renplate-*-pc.zip renplate-pc.zip
 
         - uses: "marvinpinto/action-automatic-releases@latest"
           with:
@@ -39,6 +39,6 @@ jobs:
              prerelease: true
              title: "Development Build"
              files: |
-               renpyboilerplate-pc.zip
-               renpyboilerplate-mac.zip
-               renpyboilerplate-linux.tar.bz2
+               renplate-pc.zip
+               renplate-mac.zip
+               renplate-linux.tar.bz2
