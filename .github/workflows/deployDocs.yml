@@ -28,6 +28,7 @@ jobs:
           git config --local user.name "Deploy Action"
           git config --local user.email "dev@example.com"
           echo "FIXME: Ignoring the output of git commit and git push"
+          git checkout master
           git pull
           git commit -m "auto build documentation for commit ${{ github.sha }}" -a || true
       - name: Build and Deploy
