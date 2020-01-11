@@ -6,7 +6,7 @@ on:
     - master
 
 jobs:
-  deploy-guide:
+  deploy:
     runs-on: ubuntu-18.04
     steps:
 
@@ -19,20 +19,22 @@ jobs:
         with:
           mdbook-version: 'latest'
 
+      - name: Removing old guide
+        run: rm -rf docs/guide/**/*
+      - name: Removing old design guide
+        run: rm -rf docs/design/**/*
+      - run: mdbook build design
+      - run: mdbook build guide
       - name: commit files
         run: |
-          echo "Removing old guide"
-          rm -rf docs/guide/**/*
-          echo "Removing old design docs"
-          rm -rf docs/design/**/*
-          mdbook build design
-          mdbook build guide
           git config --local user.name "Deploy Action"
           git config --local user.email "dev@example.com"
           git commit -m "auto build documentation for commit ${{ github.sha }}" -a ||
           echo "FIXME: Ignoring the output of git commit and git push --force"
-      - name: Pushing changes
-        uses: ad-m/github-push-action@master
+      - name: Build and Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          force: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: master
+          FOLDER: .
+          TARGET_FOLDER: .
