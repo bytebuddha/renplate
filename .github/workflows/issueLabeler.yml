@@ -25,6 +25,10 @@ jobs:
     steps:
       - uses: Naturalclar/issue-action@v1.0.0
         with:
+<<<<<<< HEAD
           keywords: '["docs", "doc"]'
+=======
+          keywords: '["docs", "documentation"]'
+>>>>>>> a259f9ddf5b35722641850b451077787e3ae88d0
           labels: '["docs"]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
