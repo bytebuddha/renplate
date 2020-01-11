@@ -1,0 +1,11 @@
+/log.txt
+/errors.txt
+/game/saves/*.save
+/game/saves/persistent
+/game/saves/navigation.json
+traceback.txt
+project.json
+**/*.rpyc
+**/*.rpyb
+**/*.*.bak
+**/*.rpymc

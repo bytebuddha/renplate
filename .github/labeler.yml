@@ -1,0 +1,16 @@
+programming:
+  - .github/**/*
+  - game/*
+  - .gitignore
+
+design:
+  - design/**/*
+
+docs:
+  - guide/**/*
+
+gui:
+  - game/gui/**/*
+
+renpy:
+  - game/scripts/**/*

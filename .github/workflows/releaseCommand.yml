@@ -1,0 +1,44 @@
+on: issue_comment
+name: Issue Comments
+jobs:
+  check_comments:
+    name: Check comments for /test
+    runs-on: ubuntu-18.04
+    steps:
+        - name: Check for Command
+          id: command
+          uses: xt0rted/slash-command-action@v1
+          with:
+            repo-token: ${{ secrets.GITHUB_TOKEN }}
+            command: release
+            reaction: "true"
+            reaction-type: "eyes"
+            allow-edits: "false"
+            permission-level: admin
+        - name: Check out code
+          uses: actions/checkout@master
+        - name: Build renpy project
+          uses: ProjectAliceDev/renpy-build-action@master
+          with:
+            project-dir: '.'
+          env:
+            SDL_AUDIODRIVER: dummy
+            SDL_VIDEODRIVER: dummy
+        - run: |
+            ls -lsa
+            ls -lsa *-dists
+            mkdir BuildArtifacts
+            cp renpyboilerplate-*-dists/renpyboilerplate-*-linux.tar.bz2 renpyboilerplate-linux.tar.bz2
+            cp renpyboilerplate-*-dists/renpyboilerplate-*-mac.zip renpyboilerplate-mac.zip
+            cp renpyboilerplate-*-dists/renpyboilerplate-*-pc.zip renpyboilerplate-pc.zip
+
+        - uses: "marvinpinto/action-automatic-releases@latest"
+          with:
+             repo_token: "${{ secrets.GITHUB_TOKEN }}"
+             automatic_release_tag: "latest"
+             prerelease: true
+             title: "Development Build"
+             files: |
+               renpyboilerplate-pc.zip
+               renpyboilerplate-mac.zip
+               renpyboilerplate-linux.tar.bz2

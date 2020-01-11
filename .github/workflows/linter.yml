@@ -1,0 +1,20 @@
+name: pull request linter
+
+on:
+  pull_request
+
+jobs:
+  delivery:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@master
+    - name: Run mdl
+      uses: actionshub/markdownlint@master
+    - name: Lint VN project
+      uses: ProjectAliceDev/renpy-lint-action@master
+      env:
+        SDL_AUDIODRIVER: dummy
+        SDL_VIDEODRIVER: dummy

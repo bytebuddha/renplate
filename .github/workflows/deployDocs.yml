@@ -1,0 +1,38 @@
+name: Deploy to github pages
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  deploy-guide:
+    runs-on: ubuntu-18.04
+    steps:
+
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+
+      - name: Setup mdBook
+        uses: peaceiris/actions-mdbook@v1
+        with:
+          mdbook-version: 'latest'
+
+      - name: commit files
+        run: |
+          echo "Removing old guide"
+          rm -rf docs/guide/**/*
+          echo "Removing old design docs"
+          rm -rf docs/design/**/*
+          mdbook build design
+          mdbook build guide
+          git config --local user.name "Deploy Action"
+          git config --local user.email "dev@example.com"
+          git commit -m "auto build documentation for commit ${{ github.sha }}" -a ||
+          echo "FIXME: Ignoring the output of git commit and git push --force"
+      - name: Pushing changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
