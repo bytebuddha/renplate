@@ -21,13 +21,15 @@ jobs:
       id: checkProgrammingLabel
       with:
         label: programming
-    - name: Does 'pull_request' has ${{ steps.checkLabel.outputs.checkedLabel }} label?
-      run: echo "${{ steps.checkLabel.outputs.hasLabel }}"
+    - name: Does 'pull_request' has ${{ steps.checkDesignLabel.outputs.checkedLabel }} label?
+      run: echo "${{ steps.checkDesignLabel.outputs.hasLabel }}"
     - name: Check out code
       uses: actions/checkout@master
     - name: Run mdl
+      if: steps.checkDesignLabel.outputs.hasLabel || steps.checkDocsLabel.outputs.hasLabel
       uses: actionshub/markdownlint@master
     - name: Lint VN project
+      if: steps.checkProgrammingLabel.outputs.hasLabel
       uses: ProjectAliceDev/renpy-lint-action@master
       env:
         SDL_AUDIODRIVER: dummy
