@@ -42,3 +42,9 @@ jobs:
                renplate-pc.zip
                renplate-mac.zip
                renplate-linux.tar.bz2
+        - name: Reply to comment
+          uses: actions/github@v1.0.0
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            args: 🎉 New development release pushed
