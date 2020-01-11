@@ -18,7 +18,7 @@ jobs:
       with:
         label: design
     - uses: Dreamcodeio/pr-has-label-action@master
-      id: checkProgrammingLabel
+      id: checkRenPyLabel
       with:
         label: programming
     - name: Does 'pull_request' has ${{ steps.checkDesignLabel.outputs.checkedLabel }} label?
@@ -29,7 +29,7 @@ jobs:
       if: steps.checkDesignLabel.outputs.hasLabel || steps.checkDocsLabel.outputs.hasLabel
       uses: actionshub/markdownlint@master
     - name: Lint VN project
-      if: steps.checkProgrammingLabel.outputs.hasLabel
+      if: steps.checkRenPyLabel.outputs.hasLabel
       uses: ProjectAliceDev/renpy-lint-action@master
       env:
         SDL_AUDIODRIVER: dummy
