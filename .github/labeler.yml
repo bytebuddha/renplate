@@ -2,10 +2,10 @@ programming:
   - .github/**/*
   - game/scripts/**/*
   - .gitignore
-  - **/*.rpy
+  - */**/*.rpy
 
 renpy:
-  - **/*.rpy
+  - */**/*.rpy
 
 design:
   - design/**/*
