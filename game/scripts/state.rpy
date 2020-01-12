@@ -1,0 +1,1 @@
+default persistent.playerName = None
