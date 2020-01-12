@@ -18,9 +18,3 @@ jobs:
             dry_run: false
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        - name: Reply to comment
-          uses: actions/github@v1.0.0
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          with:
-            args: comment "🏁 Repository Successfully Initialized"
