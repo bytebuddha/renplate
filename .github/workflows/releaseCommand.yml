@@ -1,0 +1,40 @@
+on:
+  repository_dispatch:
+    types: [release-command]
+
+jobs:
+  check_init_command:
+    name: run release command
+    runs-on: ubuntu-18.04
+    steps:
+        - name: Check out code
+          uses: actions/checkout@master
+        - name: Build renpy project
+          uses: ProjectAliceDev/renpy-build-action@master
+          with:
+            project-dir: '.'
+          env:
+            SDL_AUDIODRIVER: dummy
+            SDL_VIDEODRIVER: dummy
+        - run: |
+            mkdir BuildArtifacts
+            cp renplate-*-dists/renplate-*-linux.tar.bz2 renplate-linux.tar.bz2
+            cp renplate-*-dists/renplate-*-mac.zip renplate-mac.zip
+            cp renplate-*-dists/renplate-*-pc.zip renplate-pc.zip
+
+        - uses: "marvinpinto/action-automatic-releases@latest"
+          with:
+             repo_token: "${{ secrets.GITHUB_TOKEN }}"
+             automatic_release_tag: "latest"
+             prerelease: true
+             title: "Development Build"
+             files: |
+               renplate-pc.zip
+               renplate-mac.zip
+               renplate-linux.tar.bz2
+        - name: Reply to comment
+          uses: actions/github@v1.0.0
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            args: comment "🎉 New development release pushed"

@@ -1,0 +1,26 @@
+on:
+  repository_dispatch:
+    types: [initialize-command]
+
+jobs:
+  check_init_command:
+    name: run initialize command
+    runs-on: ubuntu-18.04
+    steps:
+        - name: Check out code
+          uses: actions/checkout@master
+        - name: Run Labeler
+          if: success()
+          uses: crazy-max/ghaction-github-labeler@v1
+          with:
+            yaml_file: .github/labels.yml
+            skip_delete: false
+            dry_run: false
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        - name: Reply to comment
+          uses: actions/github@v1.0.0
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            args: comment "🏁 Repository Successfully Initialized"

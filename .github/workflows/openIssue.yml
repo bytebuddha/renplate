@@ -22,3 +22,8 @@ jobs:
           keywords: '["docs", "doc", "documentation"]'
           labels: '["docs"]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - uses: Naturalclar/issue-action@v1.0.0
+        with:
+          keywords: '["automation", "build automation", "github actions"]'
+          labels: '["automation"]'
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
