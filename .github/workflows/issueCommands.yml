@@ -75,4 +75,40 @@ jobs:
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           with:
-            args: comment "🎉 New development release pushed"
+            args: comment "🏁 Repository Successfully Initialized"
+
+  check_deploy_command:
+    name: Check comments for /deploy commands
+    runs-on: ubuntu-18.04
+    steps:
+        - name: Check for Command
+          id: deployCommand
+          uses: xt0rted/slash-command-action@v1
+          with:
+            repo-token: ${{ secrets.GITHUB_TOKEN }}
+            command: initialize
+            reaction: "false"
+            allow-edits: "false"
+            permission-level: admin
+        - name: Check out code
+          uses: actions/checkout@master
+    - name: Setup mdBook
+      uses: peaceiris/actions-mdbook@v1
+      with:
+        mdbook-version: 'latest'
+
+    - run: mdbook build guide
+    - run: mdbook build design
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v2
+      env:
+        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./docs
+    - name: Reply to comment
+      uses: actions/github@v1.0.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        args: comment "📚 Documentation Successfully Deployed"
