@@ -1,10 +1,13 @@
-on: issue_comment
-name: Issue Development Commands
+name: Slash Command Dispatch
+on:
+  issue_comment:
+    types: [created, edited]
 jobs:
-  check_release_command:
-    - name: Slash Command Dispatch
-      uses: peter-evans/slash-command-dispatch@v1
-      with:
-       token: ${{ secrets.REPO_ACCESS_TOKEN }}
-       reaction-token: ${{ secrets.GITHUB_TOKEN }}
-       commands: deploy, release, initialize
+  slashCommandDispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Slash Command Dispatch
+        uses: peter-evans/slash-command-dispatch@v1
+        with:
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          commands: deploy, release, initialize
