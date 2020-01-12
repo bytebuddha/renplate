@@ -11,6 +11,7 @@ docs:
 
 gui:
   - game/gui/**/*
+  - game/guide/gui/**/*
   - game/scripts/core/gui.rpy
 
 renpy:
@@ -25,6 +26,9 @@ web:
 graphics:
   - game/images/**/*
   - game/gui/**/*
+  - **/*.jpg
+  - **/*.png
+  - **/*.jpeg
 
 transation:
   - game/tl/**/*
@@ -34,4 +38,11 @@ mobile:
 
 characters:
   - game/scripts/core/characters.rpy
-  - game/design/src/characters/*
+  - design/src/characters/*
+
+storyline:
+  - design/src/storyline
+  - game/scripts/Story/**/*
+
+setting:
+  - design/src/setting.md

@@ -61,3 +61,6 @@
 - name: modile
   color: 56ff54
   description: mobile device related
+- name: setting
+  color: ec35aa
+  description: the setting of the story line
