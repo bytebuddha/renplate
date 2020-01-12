@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: Naturalclar/issue-action@v1.0.0
         with:
-          keywords: '["programming", "renpy"]'
+          keywords: '["programming", "renpy", "python"]'
           labels: '["programming"]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
       - uses: Naturalclar/issue-action@v1.0.0
@@ -26,4 +26,14 @@ jobs:
         with:
           keywords: '["automation", "build automation", "github actions"]'
           labels: '["automation"]'
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - uses: Naturalclar/issue-action@v1.0.0
+        with:
+          keywords: '["website"]'
+          labels: '["web"]'
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - uses: Naturalclar/issue-action@v1.0.0
+        with:
+          keywords: '["renpy"]'
+          labels: '["renpy"]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
