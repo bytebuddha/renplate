@@ -11,6 +11,27 @@ docs:
 
 gui:
   - game/gui/**/*
+  - game/scripts/core/gui.rpy
 
 renpy:
   - game/scripts/**/*
+
+automation:
+  - .github/**/*
+
+web:
+  - docs/**/*
+
+graphics:
+  - game/images/**/*
+  - game/gui/**/*
+
+transation:
+  - game/tl/**/*
+
+mobile:
+  - game/phone/**/*
+
+characters:
+  - game/scripts/core/characters.rpy
+  - game/design/src/characters/*

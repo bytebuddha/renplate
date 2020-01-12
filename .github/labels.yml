@@ -40,3 +40,24 @@
 - name: renpy
   color: 	FF7F50
   description: RenPy language
+- name: late
+  color: EE1124
+  description: Events running late on completion
+- name: automation
+  color: 8A2BE2
+  description: automagical tooling
+- name: duplicate
+  color: fFF500
+  description: duplicate issue already tracked
+- name: web
+  color: 008080
+  description: website related
+- name: graphics
+  color: 00FFFF
+  description: image/graphic related
+- name: translation
+  color: e5e5e5
+  description: changes in translation files
+- name: modile
+  color: 56ff54
+  description: mobile device related
