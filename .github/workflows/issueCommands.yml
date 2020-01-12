@@ -2,9 +2,9 @@ on: issue_comment
 name: Issue Development Commands
 jobs:
   check_release_command:
-  - name: Slash Command Dispatch
-    uses: peter-evans/slash-command-dispatch@v1
-    with:
-     token: ${{ secrets.REPO_ACCESS_TOKEN }}
-     reaction-token: ${{ secrets.GITHUB_TOKEN }}
-     commands: deploy, release, initialize
+    - name: Slash Command Dispatch
+      uses: peter-evans/slash-command-dispatch@v1
+      with:
+       token: ${{ secrets.REPO_ACCESS_TOKEN }}
+       reaction-token: ${{ secrets.GITHUB_TOKEN }}
+       commands: deploy, release, initialize
