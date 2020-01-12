@@ -46,7 +46,7 @@ jobs:
           with:
             args: comment "🎉 New development release pushed"
 
-  check_repository_init_command:
+  check_init_command:
     name: Check comments for /repository-init commands
     runs-on: ubuntu-18.04
     steps:
@@ -59,8 +59,7 @@ jobs:
             reaction: "false"
             allow-edits: "false"
             permission-level: admin
-        - name: Check out code
-          uses: actions/checkout@master
+
         - name: Run Labeler
           if: success()
           uses: crazy-max/ghaction-github-labeler@v1
@@ -75,4 +74,4 @@ jobs:
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           with:
-            args: comment "🎉 Github Repository Is now setup"
+            args: comment "🎉 New development release pushed"
