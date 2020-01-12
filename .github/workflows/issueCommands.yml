@@ -46,7 +46,7 @@ jobs:
           with:
             args: comment "🎉 New development release pushed"
 
-  check_release_command:
+  check_repository_init_command:
     name: Check comments for /repository-init commands
     runs-on: ubuntu-18.04
     steps:
