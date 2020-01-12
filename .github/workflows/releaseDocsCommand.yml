@@ -1,0 +1,42 @@
+on: issue_comment
+name: Issue Comments
+jobs:
+  check_comments:
+    name: Check comments for /test
+    runs-on: ubuntu-18.04
+    steps:
+        - name: Check for Command
+          id: command
+          uses: xt0rted/slash-command-action@v1
+          with:
+            repo-token: ${{ secrets.GITHUB_TOKEN }}
+            command: release-docs
+            reaction: "true"
+            reaction-type: "eyes"
+            allow-edits: "false"
+            permission-level: admin
+        - name: Check out code
+          uses: actions/checkout@master
+        - run: |
+          echo "FIXME: Ignoring the output of git commit and git push"
+          git checkout master
+          git pull
+          rm -rf docs/guide/**/*
+          rm -rf docs/design/**/*
+          mdbook build design
+          mdbook build guide
+          git config --local user.name "Deploy Action"
+          git config --local user.email "dev@example.com"
+          git commit -m "auto build documentation for commit ${{ github.sha }}" -a || true
+
+        - name: Push changes
+          uses: ad-m/github-push-action@master
+          with:
+            github_token: ${{ secrets.ACCESS_TOKEN }}
+
+        - name: Reply to comment
+          uses: actions/github@v1.0.0
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            args: comment "🎉 New documentation release pushed"
