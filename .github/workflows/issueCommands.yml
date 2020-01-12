@@ -86,7 +86,7 @@ jobs:
           uses: xt0rted/slash-command-action@v1
           with:
             repo-token: ${{ secrets.GITHUB_TOKEN }}
-            command: initialize
+            command: deploy
             reaction: "false"
             allow-edits: "false"
             permission-level: admin
