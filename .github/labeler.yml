@@ -27,7 +27,7 @@ graphics:
   - game/images/**/*
   - game/gui/**/*
 
-transation:
+translation:
   - game/tl/**/*
 
 mobile:
