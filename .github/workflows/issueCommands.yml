@@ -103,7 +103,9 @@ jobs:
         - name: Deploy
           uses: peaceiris/actions-gh-pages@v2
           env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+            PUBLISH_BRANCH: gh-pages
+            PUBLISH_DIR: .
         - name: Reply to comment
           uses: actions/github@v1.0.0
           env:
