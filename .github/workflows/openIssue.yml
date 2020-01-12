@@ -12,17 +12,11 @@ jobs:
           keywords: '["programming", "renpy"]'
           labels: '["programming"]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
-  design:
-    runs-on: ubuntu-latest
-    steps:
       - uses: Naturalclar/issue-action@v1.0.0
         with:
           keywords: '["design"]'
           labels: '["design"]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
-  docs:
-    runs-on: ubuntu-latest
-    steps:
       - uses: Naturalclar/issue-action@v1.0.0
         with:
           keywords: '["docs", "doc", "documentation"]'
