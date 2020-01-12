@@ -18,16 +18,16 @@ jobs:
         - name: Check out code
           uses: actions/checkout@master
         - run: |
-          echo "FIXME: Ignoring the output of git commit and git push"
-          git checkout master
-          git pull
-          rm -rf docs/guide/**/*
-          rm -rf docs/design/**/*
-          mdbook build design
-          mdbook build guide
-          git config --local user.name "Deploy Action"
-          git config --local user.email "dev@example.com"
-          git commit -m "auto build documentation for commit ${{ github.sha }}" -a || true
+            echo "FIXME: Ignoring the output of git commit and git push"
+            git checkout master
+            git pull
+            rm -rf docs/guide/**/*
+            rm -rf docs/design/**/*
+            mdbook build design
+            mdbook build guide
+            git config --local user.name "Deploy Action"
+            git config --local user.email "dev@example.com"
+            git commit -m "auto build documentation for commit ${{ github.sha }}" -a || true
 
         - name: Push changes
           uses: ad-m/github-push-action@master
