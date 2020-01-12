@@ -55,7 +55,7 @@ jobs:
           uses: xt0rted/slash-command-action@v1
           with:
             repo-token: ${{ secrets.GITHUB_TOKEN }}
-            command: repository-init
+            command: initialize
             reaction: "false"
             allow-edits: "false"
             permission-level: admin
