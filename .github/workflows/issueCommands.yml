@@ -1,8 +1,8 @@
 on: issue_comment
 name: Issue Development Commands
 jobs:
-  check_commands:
-    name: Check comments for release commands
+  check_release_command:
+    name: Check comments for /release commands
     runs-on: ubuntu-18.04
     steps:
         - name: Check for Command
@@ -45,3 +45,34 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           with:
             args: comment "🎉 New development release pushed"
+
+  check_release_command:
+    name: Check comments for /repository-init commands
+    runs-on: ubuntu-18.04
+    steps:
+        - name: Check for Command
+          id: releaseCommand
+          uses: xt0rted/slash-command-action@v1
+          with:
+            repo-token: ${{ secrets.GITHUB_TOKEN }}
+            command: repository-init
+            reaction: "false"
+            allow-edits: "false"
+            permission-level: admin
+        - name: Check out code
+          uses: actions/checkout@master
+        - name: Run Labeler
+          if: success()
+          uses: crazy-max/ghaction-github-labeler@v1
+          with:
+            yaml_file: .github/labels.yml
+            skip_delete: false
+            dry_run: false
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        - name: Reply to comment
+          uses: actions/github@v1.0.0
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            args: comment "🎉 Github Repository Is now setup"
