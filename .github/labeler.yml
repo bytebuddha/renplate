@@ -26,9 +26,9 @@ web:
 graphics:
   - game/images/**/*
   - game/gui/**/*
-  - **/*.jpg
-  - **/*.png
-  - **/*.jpeg
+  - */**/*.jpg
+  - */**/*.png
+  - */**/*.jpeg
 
 transation:
   - game/tl/**/*
