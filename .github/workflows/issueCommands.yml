@@ -1,8 +1,8 @@
 on: issue_comment
-name: Issue Comments
+name: Issue Development Commands
 jobs:
-  check_comments:
-    name: Check comments for /test
+  check_commands:
+    name: Check comments for release commands
     runs-on: ubuntu-18.04
     steps:
         - name: Check for Command
@@ -11,8 +11,7 @@ jobs:
           with:
             repo-token: ${{ secrets.GITHUB_TOKEN }}
             command: release
-            reaction: "true"
-            reaction-type: "eyes"
+            reaction: "false"
             allow-edits: "false"
             permission-level: admin
         - name: Check out code

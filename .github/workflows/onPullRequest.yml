@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/labeler@v2
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
     - uses: Dreamcodeio/pr-has-label-action@master
       id: checkDocsLabel
       with:
