@@ -7,3 +7,7 @@ title = "Example Game Guide"
 
 [build]
 build-dir = "../docs/guide"
+
+[output.html]
+default-theme = "coal"
+prefered-dark-theme = "coal"
