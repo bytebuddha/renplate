@@ -105,7 +105,7 @@ jobs:
           env:
             PERSONAL_TOKEN: ${{ secrets.ACCESS_TOKEN }}
             PUBLISH_BRANCH: gh-pages
-            PUBLISH_DIR: .
+            PUBLISH_DIR: docs/
         - name: Reply to comment
           uses: actions/github@v1.0.0
           env:
