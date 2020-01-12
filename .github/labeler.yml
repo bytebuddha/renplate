@@ -17,9 +17,6 @@ gui:
   - game/guide/gui/**/*
   - game/scripts/core/gui.rpy
 
-renpy:
-  - game/scripts/**/*
-
 automation:
   - .github/**/*
 
