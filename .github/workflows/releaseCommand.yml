@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
         - name: Check for Command
-          id: command
+          id: releaseCommand
           uses: xt0rted/slash-command-action@v1
           with:
             repo-token: ${{ secrets.GITHUB_TOKEN }}
@@ -48,7 +48,7 @@ jobs:
             args: comment "🎉 New development release pushed"
 
         - name: Check for Command
-          id: command
+          id: releaseDocsCommand
           uses: xt0rted/slash-command-action@v1
           with:
             repo-token: ${{ secrets.GITHUB_TOKEN }}
