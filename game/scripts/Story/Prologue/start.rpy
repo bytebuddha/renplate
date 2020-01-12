@@ -8,7 +8,11 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg room
+    image bg:
+        "bg room"
+        zoom 1.5
+
+    scene bg
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
@@ -21,6 +25,12 @@ label start:
     e "You've created a new Ren'Py game."
 
     e "Once you add a story, pictures, and music, you can release it to the world!"
+
+    python:
+        playerName = renpy.input("What is your name?")
+        persistent.playerName = playerName
+
+    e "Your name is [playerName]"
 
     # This ends the game.
 

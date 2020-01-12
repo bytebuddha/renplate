@@ -1,7 +1,10 @@
 programming:
   - .github/**/*
-  - game/*
+  - game/scripts/**/*
   - .gitignore
+
+renpy:
+  - game/scripts/**/*.rpy
 
 design:
   - design/**/*
@@ -14,9 +17,6 @@ gui:
   - game/guide/gui/**/*
   - game/scripts/core/gui.rpy
 
-renpy:
-  - game/scripts/**/*
-
 automation:
   - .github/**/*
 
@@ -26,11 +26,8 @@ web:
 graphics:
   - game/images/**/*
   - game/gui/**/*
-  - **/*.jpg
-  - **/*.png
-  - **/*.jpeg
 
-transation:
+translation:
   - game/tl/**/*
 
 mobile:
