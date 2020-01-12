@@ -47,11 +47,11 @@ jobs:
             args: comment "🎉 New development release pushed"
 
   check_init_command:
-    name: Check comments for /repository-init commands
+    name: Check comments for /initialize commands
     runs-on: ubuntu-18.04
     steps:
         - name: Check for Command
-          id: releaseCommand
+          id: initCommand
           uses: xt0rted/slash-command-action@v1
           with:
             repo-token: ${{ secrets.GITHUB_TOKEN }}
@@ -59,7 +59,8 @@ jobs:
             reaction: "false"
             allow-edits: "false"
             permission-level: admin
-
+        - name: Check out code
+          uses: actions/checkout@master
         - name: Run Labeler
           if: success()
           uses: crazy-max/ghaction-github-labeler@v1
