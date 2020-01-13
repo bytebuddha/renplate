@@ -18,6 +18,7 @@ jobs:
             SDL_VIDEODRIVER: dummy
         - run: |
             ls -lsa
+            ls -lsa renpy-dists
             cp renpy-dists/renplate-pc.zip renplate-pc.zip
             cp renpy-dists/renplate-win.zip renplate-win.zip
             cp renpy-dists/renplate-mac.zip renplate-mac.zip
