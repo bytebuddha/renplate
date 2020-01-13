@@ -17,11 +17,11 @@ jobs:
             SDL_AUDIODRIVER: dummy
             SDL_VIDEODRIVER: dummy
         - run: |
-          mv renpy-dists/renplate-pc.zip renplate-pc.zip
-          mv renpy-dists/renplate-win.zip renplate-win.zip
-          mv renpy-dists/renplate-mac.zip renplate-mac.zip
-          mv renpy-dists/renplate-linux.tar.bz2 renplate-linux.tar.bz2
-          mv renpy-dists/renplate-web.zip renplate-web.zip
+            mv renpy-dists/renplate-pc.zip renplate-pc.zip
+            mv renpy-dists/renplate-win.zip renplate-win.zip
+            mv renpy-dists/renplate-mac.zip renplate-mac.zip
+            mv renpy-dists/renplate-linux.tar.bz2 renplate-linux.tar.bz2
+            mv renpy-dists/renplate-web.zip renplate-web.zip
 
         - uses: "marvinpinto/action-automatic-releases@latest"
           if: github.event.client_payload.slash_command.args == ''
