@@ -16,11 +16,6 @@ jobs:
           env:
             SDL_AUDIODRIVER: dummy
             SDL_VIDEODRIVER: dummy
-        - run: |
-            mkdir BuildArtifacts
-            cp renplate-*-dists/renplate-*-linux.tar.bz2 renplate-linux.tar.bz2
-            cp renplate-*-dists/renplate-*-mac.zip renplate-mac.zip
-            cp renplate-*-dists/renplate-*-pc.zip renplate-pc.zip
 
         - uses: "marvinpinto/action-automatic-releases@latest"
           with:
@@ -29,6 +24,6 @@ jobs:
              prerelease: true
              title: "Development Build"
              files: |
-               renplate-pc.zip
-               renplate-mac.zip
-               renplate-linux.tar.bz2
+               renpy-dists/renplate-pc.zip
+               renpy-dists/renplate-mac.zip
+               renpy-dists/renplate-linux.tar.bz2

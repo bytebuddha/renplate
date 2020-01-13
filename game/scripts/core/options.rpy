@@ -38,7 +38,8 @@ define gui.about = _p("""
 ## or semicolons.
 
 define build.name = "renplate"
-
+define build.directory_name = "renpy-dists"
+define build.executable_name = "renplate"
 
 ## Sounds and music ############################################################
 
