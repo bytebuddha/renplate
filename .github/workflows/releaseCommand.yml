@@ -19,11 +19,11 @@ jobs:
         - run: |
             ls -lsa
             ls -lsa renpy-dists
-            cp renpy-dists/renplate-pc.zip renplate-pc.zip
-            cp renpy-dists/renplate-win.zip renplate-win.zip
-            cp renpy-dists/renplate-mac.zip renplate-mac.zip
-            cp renpy-dists/renplate-linux.tar.bz2 renplate-linux.tar.bz2
-            cp renpy-dists/renplate-web.zip renplate-web.zip
+            cp renpy-dists/renpy-pc.zip renplate-pc.zip
+            cp renpy-dists/renpy-win.zip renplate-win.zip
+            cp renpy-dists/renpy-mac.zip renplate-mac.zip
+            cp renpy-dists/renpy-linux.tar.bz2 renplate-linux.tar.bz2
+            cp renpy-dists/renpy-web.zip renplate-web.zip
 
         - uses: "marvinpinto/action-automatic-releases@latest"
           if: github.event.client_payload.slash_command.args == ''
