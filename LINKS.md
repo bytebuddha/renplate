@@ -2,11 +2,17 @@
 ### Git
 
   - [Official Website](https://git-scm.com/)
+  - [Git Handbook](https://guides.github.com/introduction/git-handbook/)
+  - [Github Guides](https://guides.github.com/)
+  - [Github Documentation](https://help.github.com/en)
   - [Github Flow](https://guides.github.com/introduction/flow/)
   - [Git/Github Tutorial](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners)
   - [Git Tutorial](https://www.edureka.co/blog/git-tutorial/)
   - [Resources to learn git](https://try.github.io/)
+  - [Forking Projects](https://guides.github.com/activities/forking/)
+  - [Mastering Issues](https://guides.github.com/features/issues/)
   - [BadAss Git Gui](https://www.gitkraken.com/)
+  - [Github Pages](https://guides.github.com/features/pages/)
 
 ### mdBook
 
@@ -16,15 +22,13 @@
  - [Online Markdown Editor](https://dillinger.io/)
  - [Documentation](https://rust-lang.github.io/mdBook/)
  - [Repository](https://github.com/mdbook/)
-
-### mdBook examples
-
-  - [serde-rs](https://serde.rs/)
-  - [amethyst](https://book.amethyst.rs/stable/)
-  - [Rust Documentation](https://doc.rust-lang.org/book/)
-  - [Rust By Example](https://doc.rust-lang.org/stable/rust-by-example/)
-  - [Introduction to Rust](https://stevedonovan.github.io/rust-gentle-intro/)
-  - [Rustonomicon](https://doc.rust-lang.org/nightly/nomicon/)
+##### examples  
+    - [serde-rs](https://serde.rs/)
+    - [amethyst](https://book.amethyst.rs/stable/)
+    - [Rust Documentation](https://doc.rust-lang.org/book/)
+    - [Rust By Example](https://doc.rust-lang.org/stable/rust-by-example/)
+    - [Introduction to Rust](https://stevedonovan.github.io/rust-gentle-intro/)
+    - [Rustonomicon](https://doc.rust-lang.org/nightly/nomicon/)
 
 ### RenPy
 
@@ -40,6 +44,7 @@
 ### Github Actions
 
   - [Documentation](https://help.github.com/en/actions)
+  - [Introduction](https://scotch.io/bar-talk/introducing-github-actions)
   - [mdBook Actions](https://github.com/marketplace/actions/mdbook-action)
   - [Does PR has label](https://github.com/marketplace/actions/does-pr-has-the-label)
   - [RenPy Lint Action](https://github.com/ProjectAliceDev/renpy-lint-action)

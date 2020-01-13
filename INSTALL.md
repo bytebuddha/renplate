@@ -21,3 +21,4 @@ and setup the actions for building and linting.
 1. Create a new personal access token for this repository this will be used when
    deploying the docs, add this token as a repository secret named ACCESS_TOKEN.
 1. Run the `/deploy` command to generate initial documention
+1. Run the `/release` command to generate initial development release

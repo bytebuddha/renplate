@@ -1,7 +1,7 @@
 # Renplate: RenPy Project template
 
-Template repository for open source RenPy game's hosted on github. Uses Github
-Actions to destribute code on demand.
+Template repository for open source RenPy game's hosted on Github. Includes many
+tools including Github Actions to distribute code on demand.
 
 ###### Github
   - [x] Ready to develop RenPy game template
@@ -25,9 +25,9 @@ Actions to destribute code on demand.
   apply's labels according to the config file.
 
 ## Automatically labeling Pull Requests
-  This uses `actions/labeler@v2` to automatically label received Pull Requests.
-  This maps labels to the Pull Requests changed file's using the configuration
-  in `.github/labeler.yml`
+  This uses `actions/labeler@v2` to automatically label received pull requests
+  when they are created. This maps labels to the pull requests changed file's
+  using the configuration in `.github/labeler.yml`
 
 ## Documentation
 
@@ -42,10 +42,18 @@ Actions to destribute code on demand.
   place them in the `docs/img/` directory and reference them in markdown like
   `images/file_name.ext`
 
+  Example documentation is available [**here**](https://shadowpixie.github.io/renplate/).
+
 ## Issue Comment Commands
   Github action commands can be run by commenting on a issue with the text
   /$COMMAND e.g. /initialize to run the initialize command. This uses repository
-  dispatch handlers to handle each command, and requires the `admin` privilges
+  dispatch handlers to handle each command, and requires `admin` privilges. This
+  implementation is a thin wrapper around `peter-evans/slash-command-dispatch@v1`
+  and commands can be run by commenting on any issue/pull request.
+
+  **Note** When these commands are run, an emoji reaction is put on the comment
+  to symbolize it recognizing a command not the actual result.
+
 
   - ##### initialize
       This command should be run when first uploading to Github it ensures
@@ -57,4 +65,5 @@ Actions to destribute code on demand.
 
   - ##### release
     This command will build the renpy game and push a new release to github
-    release's
+    release's. If an argument is given then it is assumed this is a versioned
+    release and the tag name will be set to the args given.
