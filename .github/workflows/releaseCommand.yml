@@ -45,7 +45,7 @@ jobs:
              repo_token: "${{ secrets.GITHUB_TOKEN }}"
              automatic_release_tag: "${{ github.event.client_payload.slash_command.args }}"
              prerelease: false
-             title: "Development Build"
+             title: "Release Build ${{ github.event.client_payload.slash_command.args}}"
              files: |
                renplate-pc.zip
                renplate-win.zip
