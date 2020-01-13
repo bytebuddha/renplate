@@ -1,5 +1,12 @@
 # Renplate: RenPy Project template
 
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+[![](https://github.com/Bytebuddha/renplate/workflows/.github/workflows/deployCommand.yml/badge.svg)](https://github.com/bytebuddha/renplate/actions)
+[![](https://github.com/Bytebuddha/renplate/workflows/.github/workflows/releaseCommand.yml/badge.svg)](https://github.com/bytebuddha/renplate/actions)
+[![GitHub version](https://badge.fury.io/gh/Bytebuddha%2Frenplate.svg)](https://github.com/Bytebuddha/replate)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+
+
 Template repository for open source RenPy game's hosted on Github. Includes many
 tools including Github Actions to distribute code on demand.
 
