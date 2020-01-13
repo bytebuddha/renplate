@@ -20,9 +20,22 @@ jobs:
             ls -lsa
 
         - uses: "marvinpinto/action-automatic-releases@latest"
+          if: ${{ github.event.client_payload.slash_command.args }} == ''
           with:
              repo_token: "${{ secrets.GITHUB_TOKEN }}"
              automatic_release_tag: "latest"
+             prerelease: true
+             title: "Development Build"
+             files: |
+               renplate-pc.zip
+               renplate-mac.zip
+               renplate-linux.tar.bz2
+
+        - uses: "marvinpinto/action-automatic-releases@latest"
+          if: ${{ github.event.client_payload.slash_command.args }} != ''
+          with:
+             repo_token: "${{ secrets.GITHUB_TOKEN }}"
+             automatic_release_tag: "${{ github.event.client_payload.slash_command.args }}"
              prerelease: true
              title: "Development Build"
              files: |
