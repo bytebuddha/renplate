@@ -39,7 +39,7 @@ characters:
 
 storyline:
   - design/src/storyline
-  - game/scripts/Story/**/*
+  - game/scripts/story/**/*
 
 setting:
   - design/src/setting.md
