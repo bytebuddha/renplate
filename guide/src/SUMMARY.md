@@ -1,5 +1,5 @@
 # Summary
-- [Gui](./gui/index.html)
+- [Gui](./gui/Readme.md)
   - [Main Menu](./gui/mainmenu.md)
   - [Dialog History Page](./gui/dialog_history.md)
   - [Help Page](./gui/help_page.md)

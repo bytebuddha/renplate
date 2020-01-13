@@ -1,0 +1,2 @@
+- character 1
+- character 2
