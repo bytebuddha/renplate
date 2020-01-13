@@ -38,7 +38,7 @@ Actions to destribute code on demand.
   When build both books will be built into the `docs/guide/` and `docs/design/`
   respectivly. Then the whole `docs/` directory will be written to the root
   of the gh-pages branch for publishing. To use images in either of these books
-  place them in the `docs/images/` directory and reference them in markdown like
+  place them in the `docs/img/` directory and reference them in markdown like
   `images/file_name.ext`
 
 ## Issue Comment Commands

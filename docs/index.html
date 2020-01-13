@@ -1,55 +1,81 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.4.1/cyborg/bootstrap.min.css"></link>
-    <style>
-        .jumbotron {
-					background-color: #000000;
-					background-image: url('banner.jpg');
-					background-position: center;
-					background-size: contain;
-					background-repeat: no-repeat;
-				}
-    </style>
-	</head>
-	<body>
-    <div class="jumbotron border-bottom border-info">
-      <div class="container">
-        <h1 class="display-4">Game Name</h1>
-        <p class="lead">Some game or something.</p>
-        <hr class="my-4" style="color:green">
-        <p>Latest development versions can be downloaded here.</p>
-        <p class="lead text-center">
-          <a class="btn btn-outline-success btn-lg"
-					   style="margin:17px"
-						 href="https://github.com/bytebuddha/renplate/releases/download/latest/renplate-pc.zip"
-						 role="button">
-						   Windows (.zip)
-					</a>
-					<a class="btn btn-outline-success btn-lg"
-						 style="margin:17px"
-						 href="https://github.com/bytebuddha/renplate/releases/download/latest/renplate-mac.zip"
-						 role="button">
-							 Mac (.zip)
-					</a>
-          <a class="btn btn-outline-success btn-lg"
-					   style="margin:17px"
-						 href="https://github.com/bytebuddha/renplate/releases/download/latest/renplate-linux.tar.bz2"
-						 role="button">
-						   Linux (.bz2)
-					<a>
-        </p>
+<head>
+  <meta charset="utf-8">
+  <title>Regna Bootstrap Template</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cyborg/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: Regna
+    Theme URL: https://bootstrapmade.com/regna-bootstrap-onepage-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+</head>
+
+<body>
+
+  <!--==========================
+  Header
+  ============================-->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <!--<a href="#hero"><img src="img/logo.png" alt="" title="" /></img></a>-->
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <h1><a href="#hero">RenPlate</a></h1>
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="#hero">Home</a></li>
+          <li><a href="https://github.com/ShadowPixie/renplate">Code</a></li>
+          <li><a href="design/">Design</a></li>
+          <li><a href="guide/">Guide</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Hero Section
+  ============================-->
+  <section id="hero">
+    <div class="hero-container">
+      <h1>RenPy Boilerplate</h1>
+      <h2>Quick way to start a new renpy project.</h2>
+      <div class="btn-group">
+        <a href="https://github.com/bytebuddha/renplate/releases/download/latest/renplate-pc.zip" class="btn btn-outline-info mr-4">Windows 64 Bit</a>
+        <a href="https://github.com/bytebuddha/renplate/releases/download/latest/renplate-linux.tar.bz2" class="btn btn-outline-info mr-4">Linux</a>
+        <a href="https://github.com/bytebuddha/renplate/releases/download/latest/renplate-mac.zip" class="btn btn-outline-info mr-4">MacOS</a>
       </div>
     </div>
-    <div class="container justify-content-center">
-      <h3>Design Documentation</h3>
-				 <a class="btn btn-lg btn-outline-info" style="margin:17px" href="https://github.com/Bytebuddha/renplate" role="button">Code</a>
-         <a class="btn btn-lg btn-outline-info" style="margin:17px" href="guide/" role="button">Guide</a>
-         <a class="btn btn-lg btn-outline-info" style="margin:17px" href="design/" role="button">Design</a>
-      </p>
-    </div>
-	</body>
+  </section><!-- #hero -->
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
 </html>
