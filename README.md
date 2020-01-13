@@ -14,6 +14,7 @@ Actions to destribute code on demand.
   - [x] Windows 32 bit
   - [x] Linux
   - [x] macOS
+  - [x] Web
   - [ ] Android
   - [ ] IOS
 
