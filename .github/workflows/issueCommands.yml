@@ -6,13 +6,6 @@ jobs:
   slashCommandDispatch:
     runs-on: ubuntu-latest
     steps:
-        - uses: actions/checkout@master
-        - name: Automatic Rebase
-          if: github.event.issue.pull_request != '' && contains(github.event.comment.body, '/rebase')
-          uses: cirrus-actions/rebase@1.2
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
         - name: Slash Command Dispatch
           uses: peter-evans/slash-command-dispatch@v1
           with:
