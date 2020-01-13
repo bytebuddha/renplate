@@ -6,9 +6,6 @@ jobs:
   slashCommandDispatch:
     runs-on: ubuntu-latest
     steps:
-      - name: Rebase
-        runs-on: ubuntu-latest
-        steps:
         - uses: actions/checkout@master
         - name: Automatic Rebase
           if: github.event.issue.pull_request != '' && contains(github.event.comment.body, '/rebase')
