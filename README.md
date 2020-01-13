@@ -11,7 +11,7 @@ Actions to destribute code on demand.
 
 ###### Supported Build Platforms
   - [x] Windows 64 bit
-  - [ ] Windows 32 bit
+  - [x] Windows 32 bit
   - [x] Linux
   - [x] macOS
   - [ ] Android
