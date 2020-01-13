@@ -10,6 +10,9 @@
 Template repository for open source RenPy game's hosted on Github. Includes many
 tools including Github Actions to distribute code on demand.
 
+**Note:** This file and the `LICENSE.md` file will be included in the build
+renpy game.
+
 ###### Github
   - [x] Ready to develop RenPy game template
   - [x] Automatic labeling of Issues and Pull Requests.
