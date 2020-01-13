@@ -18,6 +18,7 @@ jobs:
             SDL_VIDEODRIVER: dummy
         - run: |
             ls -lsa
+            ls -lsa renpy-dists
 
         - uses: "marvinpinto/action-automatic-releases@latest"
           if: github.event.client_payload.slash_command.args == ''
@@ -27,9 +28,9 @@ jobs:
              prerelease: true
              title: "Development Build"
              files: |
-               renplate-pc.zip
-               renplate-mac.zip
-               renplate-linux.tar.bz2
+               renpy-dists/renplate-pc.zip
+               renpy-dists/renplate-mac.zip
+               renpy-dists/renplate-linux.tar.bz2
 
         - uses: "marvinpinto/action-automatic-releases@latest"
           if: github.event.client_payload.slash_command.args != ''
@@ -39,6 +40,6 @@ jobs:
              prerelease: true
              title: "Development Build"
              files: |
-               renplate-pc.zip
-               renplate-mac.zip
-               renplate-linux.tar.bz2
+               renpy-dists/renplate-pc.zip
+               renpy-dists/renplate-mac.zip
+               renpy-dists/renplate-linux.tar.bz2
