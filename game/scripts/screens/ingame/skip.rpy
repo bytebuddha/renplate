@@ -51,7 +51,7 @@ style skip_text:
 style skip_triangle:
     ## We have to use a font that has the BLACK RIGHT-POINTING SMALL TRIANGLE
     ## glyph in it.
-    font "DejaVuSans.ttf"
+    font "fonts/AfterglowRegular.ttf"
 
 
 ## Notify screen ###############################################################
