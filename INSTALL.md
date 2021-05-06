@@ -5,7 +5,7 @@ and setup the actions for building and linting.
 
 1. Update The LICENSE.md file.
 
-1. Modify the source of `games/scripts/core/options.rs` and replace
+1. Modify the source of `games/scripts/core/options.rpy` and replace
    `build.name` with the correct file name.
 1. Modify the source of `.github/workflows/releaseCommand.yml` replace
    `renplate` with your desired `buid.name`.
